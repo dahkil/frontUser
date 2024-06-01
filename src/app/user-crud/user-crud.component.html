@@ -8,8 +8,7 @@
 						<form class="form-inline mt-4 search-form">
 							<input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm" (input)="filterClothesByName()">
 						</form>
-						<a class="add-btn" (click)="showBasicDialog()">New</a>
-						
+					
 						
 					</div>
 			</div>
@@ -22,43 +21,33 @@
 		<app-sidebar></app-sidebar>
 	</div>
 	<div class="content">
-		<div class = "category-filter">
+		
 
-			<div class = "container">
-				
-				<div class = "title">
-					<h1>Wardrobe</h1>
-				</div>
-	  
-				<div class = "filter-btns">
-					<button type = "button" class = "filter-btn" id = "all"(click)="getClothes()">all</button>
-					<button type = "button" class = "filter-btn" id = "new"  (click)="filterClothes('SHIRT')">SHIRT</button>
-					<button type = "button" class = "filter-btn" id = "best-sellers"  (click)="filterClothes('PANTS')">PANTS</button>
-					<button type = "button" class = "filter-btn" id = "specials"  (click)="filterClothes('JACKET')">JACKET</button>
-					<button type = "button" class = "filter-btn" id = "specials"  (click)="filterClothes('SWEATER')">SWEATER</button>
-					<button type = "button" class = "filter-btn" id = "specials"  (click)="filterClothes('SHOES')">SHOES</button>
-					<button type = "button" class = "filter-btn" id = "specials"  (click)="filterClothes('ACCESSORIES')">ACCESSORIES</button>
-				</div>
-	  
-				<div class = "filter-items">
-					<div class = "filter-item all new best-sellers specials" *ngFor="let clothes of filteredClothes">
-						<div class = "item-img">
-							<img [src]="'assets/images/' + clothes.imageName" alt="Item image">
-							
-						</div>
-						<div class = "item-info">
-							<p> {{clothes.name}}</p>
-							<p> {{clothes.description}}</p>
-						
-							<a class ="add-btn " (click)="updateClothes(clothes)">Update </a>
-							<a  class ="add-btn cancel-btn"(click)="deleteClothes(clothes.id)">Delete </a>
-						</div>
-					</div>
+			<div class = "container1">
+				<div class = "filter-items" *ngFor="let user of filteredClothes">
+					<div class="w3-card-4">
+
+                        <header class="w3-container w3-light-grey">
+                          <h3>{{user.firstName}} {{user.lastName}}</h3>
+                        </header>
+                        
+                        <div class="w3-container">
+                          <p>E-mail : {{user.email}}</p>
+                          <hr>
+                          <img [src]="user.imageName ? 'assets/images/'+user.imageName : 'https://bootdey.com/img/Content/avatar/avatar1.png'"   alt="Avatar" class="w3-left w3-circle">
+                          <p>Date de Creation : {{user.creationDate}}</p>
+                        </div>
+                        
+                        <button class="w3-button w3-block w3-dark-grey" (click)="deleteUser(user.id)">Supprimer</button>
+                      
+                        
+                        </div>
+
 	  
 					
 				</div>
 			</div>
-		</div>
+		
 		
 	</div>
 	</div>

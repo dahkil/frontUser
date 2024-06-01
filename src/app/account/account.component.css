@@ -611,7 +611,22 @@ body{
 }
 
 .ml-4 {
-    margin-left: 1.5rem; /* Adjust the value as needed */
+    margin-left: 0.5rem; /* Adjust the value as needed */
 }
+.layout {
+    display: flex;
+    height: 100vh; /* Assurez-vous que le layout occupe toute la hauteur de la fenêtre */
+  }
+  
+  .layout > app-sidebar {
+    flex: 0 0 50px; /* Fixe la largeur de la sidebar à 250px */
+  }
+  
+  .container {
+    flex: 1; /* Permet à la conteneur principal de prendre tout l'espace restant */
+    padding: 20px; /* Ajoutez du padding pour un espacement intérieur */
+   overflow: hidden;
+  }
+  
 
   

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { CarouselModule } from 'primeng/carousel';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LeftContainerComponent } from './left-container/left-container.component';
@@ -47,11 +47,17 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 
-
+import { TagModule } from 'primeng/tag';
 import { FileUploadModule } from 'primeng/fileupload';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { EventListComponent } from './event-list/event-list.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { TendenceComponent } from './tendence/tendence.component';
+import { ProductService } from './tendence/service/product.service';
+import { AdminAuthComponent } from './admin-auth/admin-auth.component';
+import { TendenceCrudComponent } from './tendence-crud/tendence-crud.component';
+import { UserCrudComponent } from './user-crud/user-crud.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,7 +82,12 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     ClothingCategoriesComponent,
     UserProfileComponent,
     EventListComponent,
-    SidebarComponent
+    SidebarComponent,
+    TendenceComponent,
+    AdminAuthComponent,
+    TendenceCrudComponent,
+    UserCrudComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -87,8 +98,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     ReactiveFormsModule,
     ModalModule.forRoot(),  BrowserAnimationsModule,
     DialogModule,
-    ButtonModule,FontAwesomeModule,ButtonModule,
-		RippleModule,MessagesModule,ButtonModule,
+    ButtonModule,FontAwesomeModule,
+		RippleModule,MessagesModule,
 		RippleModule,
 		InputTextModule,
 		
@@ -98,13 +109,13 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 		InputGroupAddonModule,
 		PasswordModule,	
 		MessagesModule,
-		MessageModule,OverlayPanelModule,ConfirmDialogModule, RadioButtonModule
+		MessageModule,OverlayPanelModule,ConfirmDialogModule, RadioButtonModule,CarouselModule ,TagModule  
 
 		
 	
     
   ],
-  providers: [MessageService,ConfirmationService] ,
+  providers: [MessageService,ConfirmationService,ProductService ] ,
   bootstrap: [AppComponent],
  
 })

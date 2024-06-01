@@ -76,6 +76,7 @@
 
 .filter-items{
     margin-top: 40px;
+    margin-left: 10%;
 }
 .item-img{
     position: relative;
@@ -166,7 +167,6 @@
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-            
 }
 .filter-item{
     width: 100%;
@@ -238,17 +238,14 @@
 }
 .wrapper {
     display: flex; /* Utilisation de flexbox */
-  
 }
 
 .sidebar {
     flex: 0 0 50px; 
-    
 }
 
 .content {
     flex: 1; 
-    
 }
 .header {
     height: 200px; 

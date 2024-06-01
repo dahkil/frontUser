@@ -22,6 +22,11 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from './guards/auth.guard';
 import { EventListComponent } from './event-list/event-list.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { TendenceComponent } from './tendence/tendence.component';
+import { AdminAuthComponent } from './admin-auth/admin-auth.component';
+import { TendenceCrudComponent } from './tendence-crud/tendence-crud.component';
+import { AuthGuard1 } from './guards/auth1.guard';
+import { UserCrudComponent } from './user-crud/user-crud.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -43,7 +48,11 @@ const routes: Routes = [
 {path:"weatherRecommendation",component:WeatherRecommendationModalComponent,canActivate: [AuthGuard]},
 {path:"profil",component:UserProfileComponent,canActivate: [AuthGuard]},
 {path:"eventList",component:EventListComponent,canActivate: [AuthGuard]}, 
-{path:"side",component:SidebarComponent,canActivate:[AuthGuard]}
+{path:"side",component:SidebarComponent,canActivate:[AuthGuard]},
+{path:"tendence",component:TendenceComponent,canActivate:[AuthGuard]},
+{path:"login",component:AdminAuthComponent},
+{path:"tendences",component:TendenceCrudComponent,canActivate:[AuthGuard1]},
+{path:"users",component:UserCrudComponent,canActivate:[AuthGuard1]},
 
 
 ];

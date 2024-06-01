@@ -1,5 +1,6 @@
-<app-sidebare></app-sidebare>
-<body>
+<div class="layout">
+  <app-sidebar></app-sidebar>
+  <div class="container">
     <div class="wrapper">
      
       <header>
@@ -25,21 +26,26 @@
           <li>Sat</li>
         </ul>
         <ul class="days">
-            <li *ngFor="let day of days; let i = index" 
-            (click)="handleDayClick(day)" 
-            [ngClass]="{ 'has-event': hasEvent(day), 
-                         'inactive': i < firstDayofMonth || i >= firstDayofMonth + lastDateofMonth,
-                         'current-date': isCurrentDate(day) }">
-            {{ day }}
-            <div *ngFor="let event of getEvents(day)" class="event" [style.background-color]="event.color">
-                {{ event.title }}
-            </div>
-        </li>
-        
-
-        
-        
+          <li *ngFor="let day of days; let i = index" 
+          (click)="handleDayClick(day)" 
+          [ngClass]="{ 
+            'has-event': hasEvent(day), 
+            'inactive': !day.currentMonth,
+            'current-date': isCurrentDate(day) 
+          }">
+        <ng-container *ngIf="day.currentMonth">
+          {{ day.day }}
+        </ng-container>
+        <ng-container *ngIf="!day.currentMonth">
+          <span class="less-month">{{ day.day }}</span>
+        </ng-container>
+        <div *ngFor="let event of getEvents(day)" class="event" [style.background-color]="event.color">
+          {{ event.title }}
+        </div>
+      </li>
+      
         </ul>
+        
       </div>
       <div class="popup">
         <div class="modal fade" id="formModal">
@@ -59,15 +65,10 @@
                             <input type="color" class="form-control form-control-color" id="exampleColorInput" #exampleColorInput value="#563d7c" title="Choose your color">
                         </div>
                     </form>
-                  
                 </div>
             </div>
         </div>
     </div>
-    
-      
     </div>
-   
-  </body>
-  
-  
+  </div>
+</div>

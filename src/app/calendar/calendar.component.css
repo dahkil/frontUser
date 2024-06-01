@@ -1,4 +1,5 @@
 
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..20');
 * {
@@ -20,7 +21,7 @@ body {
 .wrapper {
     position: relative;
   width: 850px;
-  height: 500px;
+  height: auto;
   justify-content: center;
   background: #fff;
   border-radius: 20px;
@@ -188,4 +189,20 @@ header .current-date {
     border-radius: 25px;
     
   }
+  .layout {
+    display: flex;
+    height: 100vh; /* Assurez-vous que le layout occupe toute la hauteur de la fenêtre */
+  }
+  
+  .layout > app-sidebar {
+    flex: 0 0 290px; /* Fixe la largeur de la sidebar à 250px */
+  }
+  
+  .container {
+    margin-top: 5%;
+    flex: 1; /* Permet à la conteneur principal de prendre tout l'espace restant */
+    padding: 20px; /* Ajoutez du padding pour un espacement intérieur */
+    overflow-y: auto; /* Permet le défilement du contenu principal */
+  }
+  
   

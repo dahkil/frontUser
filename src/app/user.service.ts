@@ -9,19 +9,37 @@ import { Observable } from 'rxjs';
 export class UserService {
 
   private myToken=localStorage.getItem('accessToken');
+  private myToken1=localStorage.getItem('accessToken1');
   private apiUrl="http://localhost:8080/user/"
   constructor(private httpClient : HttpClient){}
+  deleteUser1(id:number ) : Observable<User>
+  {
+   
+
+  const headers= new HttpHeaders({
+        
+    'Authorization': `Bearer ${this.myToken1}`
+  })
+
+    return this.httpClient.delete<User>(`${this.apiUrl}delete/${id}`,{headers});
+  }
 
   deleteUser(id:number ) : Observable<User>
   {
- 
-      const  headers= new HttpHeaders({
+   
+
+  const headers= new HttpHeaders({
         
-        'Authorization': `Bearer ${this.myToken}`
-      })
-    
+    'Authorization': `Bearer ${this.myToken}`
+  })
+
     return this.httpClient.delete<User>(`${this.apiUrl}delete/${id}`,{headers});
   }
+ 
+    
+     
+    
+  
 
 
   getUser(id:number,token:String ): Observable<any>
@@ -50,6 +68,12 @@ console.log(this.myToken);
       'Authorization': `Bearer ${this.myToken}`
     });
     return this.httpClient.put(url, userData,{ headers });
+  }
+  getAllUsers(myToken: string): Observable<any[]> { // Return type is Users[]
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${myToken}`
+    });
+    return this.httpClient.get<any[]>(this.apiUrl + 'getAllUsers', { headers });
   }
 }
 

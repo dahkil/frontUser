@@ -2,15 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
 
 
-.wrapper{
-    width: 100%;
-    overflow-x: hidden;
-}
-.wrapper .container{
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
-}
+
 .category-filter{
     margin-top: 40px;
 }
@@ -75,7 +67,9 @@
 /*  */
 
 .filter-items{
-    margin-top: 40px;
+    margin-top: 1%;
+    margin-left: 1%;
+  
 }
 .item-img{
     position: relative;
@@ -166,7 +160,6 @@
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-            
 }
 .filter-item{
     width: 100%;
@@ -238,17 +231,14 @@
 }
 .wrapper {
     display: flex; /* Utilisation de flexbox */
-  
 }
 
 .sidebar {
     flex: 0 0 50px; 
-    
 }
 
 .content {
     flex: 1; 
-    
 }
 .header {
     height: 200px; 
@@ -266,3 +256,10 @@
 .search-form {
     display: flex;
 }
+.container1 {
+    margin-left: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }

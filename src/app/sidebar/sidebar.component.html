@@ -2,63 +2,73 @@
 
 <body>
     <aside class="sidebar">
-      <div class="logo">
+      <div class="logo" >
         <img [src]="imageSrc" alt="">
-        <h2>{{userData.firstName}} {{userData.lastName}}</h2>
+        <h2 *ngIf="test==1" >{{userData1.firstName}} {{userData1.lastName}}</h2>
+        <h2 *ngIf="test==0">{{userData.firstName}} {{userData.lastName}}</h2>
       </div>
       <ul class="links">
-        <h4>Main Menu</h4>
-        <li (click)="toggleWardrobe()" [class.open]="isWardrobeOpen">
+        <h4 *ngIf="test==0">Main Menu</h4>
+        <li *ngIf="test==0" (click)="toggleWardrobe()" [class.open]="isWardrobeOpen" routerLink="/categorie">
           <span class="material-symbols-outlined">dashboard</span>
-          <a routerLink="/categorie">Dashboard</a>
+          <a >Wardrobe</a>
         </li>
-        <li>
-          <span class="material-symbols-outlined">show_chart</span>
-          <a href="#">Revenue</a>
+        <li  *ngIf="test==0" routerLink="/chatbot">
+          <span class="material-symbols-outlined">
+            forum
+            </span>
+          <a >ChatBot</a>
         </li>
-        <li>
-          <span class="material-symbols-outlined">flag</span>
-          <a href="#">Reports</a>
+        <li *ngIf="test==0" routerLink="/calendar">
+          <span class="material-symbols-outlined">
+            calendar_month
+            </span>
+          <a >Calender</a>
         </li>
-        <hr>
-        <h4>Advanced</h4>
-        <li>
-          <span class="material-symbols-outlined">person</span>
-          <a href="#">Designer</a>
+      
+        
+        <li *ngIf="test==0" routerLink="/weather">
+          <span class="material-symbols-outlined">
+            partly_cloudy_day
+            </span>
+          <a >weather</a>
         </li>
-        <li>
-          <span class="material-symbols-outlined">group</span>
-          <a href="#">Developer </a>
+        <li *ngIf="test==0" routerLink="/tendence">
+         
+            <span class="material-symbols-outlined">
+              hotel_class
+              </span>
+          <a >tendence</a>
         </li>
-        <li>
-          <span class="material-symbols-outlined">ambient_screen</span>
-          <a href="#">Magic Build</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">pacemaker</span>
-          <a href="#">Theme Maker</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">monitoring</span>
-          <a href="#">Analytic</a>
-        </li>
+        <li *ngIf="test==1" routerLink="/tendences">
+         
+          <span class="material-symbols-outlined">
+            hotel_class
+            </span>
+        <a >tendence</a>
+      </li>
+      <li *ngIf="test==1" routerLink="/users">
+         
+        <span class="material-symbols-outlined">
+          person
+          </span>
+      <a >Users</a>
+    </li>
+      
+        
+        
         <hr>
         <h4>Account</h4>
-        <li>
-          <span class="material-symbols-outlined">bar_chart</span>
-          <a href="#">Overview</a>
+        <li *ngIf="test==0"  routerLink="/account">
+          <span class="material-symbols-outlined">
+            person
+            </span>
+          <a >Profil</a>
         </li>
-        <li>
-          <span class="material-symbols-outlined">mail</span>
-          <a href="#">Message</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">settings</span>
-          <a href="#">Settings</a>
-        </li>
-        <li class="logout-link">
+        
+        <li class="logout-link" (click)="logOut()">
           <span class="material-symbols-outlined">logout</span>
-          <a href="#">Logout</a>
+          <a >Logout</a>
         </li>
       </ul>
     </aside>

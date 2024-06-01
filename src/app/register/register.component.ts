@@ -185,7 +185,7 @@ get userNamein() {
 
         alert("connecté");
         console.log("connecté")
-        this._router.navigate(['/account']);
+        this._router.navigate(['/categorie']);
       }
     )
   }

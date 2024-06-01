@@ -1,0 +1,45 @@
+<div class="layout">
+    <app-sidebar></app-sidebar>
+    
+    <div class="container">
+        <div class="description">
+            {{text}}
+        </div>
+        <h2 class="center-text">Tendences List</h2>
+      
+<div class="card">
+   
+    <p-carousel 
+        [value]="tendences" 
+        [numVisible]="3" 
+        [numScroll]="3" 
+        [circular]="false" 
+        [responsiveOptions]="responsiveOptions">
+            <ng-template let-tendence pTemplate="item">
+                <div class="border-1 surface-border border-round m-2 p-3">
+                    <div class="mb-3">
+                        <div class="relative mx-auto">
+                            <img 
+                            [src]="'assets/images/' + tendence.imageName" 
+                                [alt]="tendence.name" 
+                                class="w-full border-round" />
+                            
+                         
+                        </div>
+                    </div>
+                    <div class="mb-3 font-medium">
+                        {{ tendence.name }}
+                    </div>
+                    <div class="flex justify-content-between align-items-center">
+                    <div class="mt-0 font-semibold text-xl">
+                        {{ tendence.description }}
+                    </div>
+                       
+                    </div>
+                </div>
+            </ng-template>
+    </p-carousel>
+</div>
+    </div>
+  </div>
+ 
